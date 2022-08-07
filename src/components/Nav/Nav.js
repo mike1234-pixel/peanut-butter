@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import LanguageSelect from "../LanguageSelect/LanguageSelect";
+import { FaPaw } from "react-icons/fa";
 import "./Nav.scss";
 
 const Navigation = () => {
@@ -17,7 +18,11 @@ const Navigation = () => {
     <Navbar collapseOnSelect expand="lg" variant="light" className="nav">
       <Container>
         <Navbar.Brand>
-          <Link to="/">Peanut Butter</Link>
+          <Link to="/">
+            Pean
+            <FaPaw className="paw" />t B<FaPaw className="paw" />
+            tter
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           {/* add is-active class to toggle the hamburger */}

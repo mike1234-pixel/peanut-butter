@@ -12,8 +12,12 @@ $hamburger-types: (elastic) !default;
     margin-right: 100px;
     a {
       margin-left: 0;
-      font-family: "Sniglet", cursive;
-      font-weight: 800;
+      font-family: "Permanent Marker", cursive;
+      font-weight: 400;
+      font-size: 30px;
+      .paw {
+        font-size: 22px;
+      }
     }
   }
   .navbar-nav {
