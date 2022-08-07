@@ -17,6 +17,10 @@ $hamburger-types: (elastic) !default;
       font-size: 30px;
       .paw {
         font-size: 22px;
+        display: inline-block;
+        &--one {
+          margin-left: 2px;
+        }
       }
     }
   }

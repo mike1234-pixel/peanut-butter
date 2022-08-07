@@ -1,13 +1,27 @@
 /// <reference types="Cypress" />
 // cypress intellisense
 
-describe("empty spec", () => {
-  it("visits local server", () => {
+describe("e2e tests", () => {
+  it("visits and navigates through the site", () => {
     cy.visit("http://localhost:3000");
 
-    cy.contains("loading..."); // query element containing text 'loading...'
+    cy.contains("Learn everything"); // query element
 
-    cy.contains("golden").click();
+    cy.contains("Your specialist guide");
+
+    cy.contains("Start Learning").click();
+
+    cy.url().should("include", "/tips");
+
+    cy.get(".language-select").select("Persian");
+
+    cy.contains("اطلاعات کلی");
+
+    cy.get(".language-select").select("English");
+
+    cy.contains("h5", "Grooming").click();
+
+    cy.contains("h1", "Grooming");
   });
 });
 

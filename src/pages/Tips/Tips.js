@@ -35,7 +35,9 @@ const Tips = () => {
                 <Card className="tip__card">
                   <Card.Img variant="top" src={tip.img} />
                   <Card.Body>
-                    <Card.Title>{toTitleCase(title)}</Card.Title>
+                    <Card.Title>
+                      <h5>{toTitleCase(title)}</h5>
+                    </Card.Title>
                     <Card.Text>
                       <span>{truncateString(description, 6)}</span>
                     </Card.Text>

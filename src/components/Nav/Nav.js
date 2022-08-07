@@ -20,7 +20,7 @@ const Navigation = () => {
         <Navbar.Brand>
           <Link to="/">
             Pean
-            <FaPaw className="paw" />t B<FaPaw className="paw" />
+            <FaPaw className="paw paw--one" />t B<FaPaw className="paw" />
             tter
           </Link>
         </Navbar.Brand>
