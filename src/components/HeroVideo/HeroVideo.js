@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../context/languageContext";
-import heroVideoSrc from "../../assets/video/hero.mp4";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./HeroVideo.scss";
@@ -36,7 +35,10 @@ const HeroVideo = () => {
         )}
       </Container>
       <video className="hero-video" autoPlay muted loop>
-        <source src={heroVideoSrc} type="video/mp4" />
+        <source
+          src="https://peanut-butter-photos.s3.eu-west-2.amazonaws.com/hero.mp4"
+          type="video/mp4"
+        />
       </video>
       <div className="hero-video__overlay"></div>
     </header>
