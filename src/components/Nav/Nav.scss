@@ -1,0 +1,44 @@
+@import "../../App.scss";
+
+$hamburger-padding-x: 10px;
+$hamburger-padding-y: 10px;
+$hamburger-types: (elastic) !default;
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+.nav {
+  @include backgroundGradient();
+  color: white;
+  .navbar-brand {
+    margin-right: 100px;
+    a {
+      margin-left: 0;
+      font-family: "Sniglet", cursive;
+      font-weight: 800;
+    }
+  }
+  .navbar-nav {
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .navbar-toggle {
+    padding: 0;
+    border: none;
+  }
+  a {
+    color: white;
+    margin-left: 30px;
+  }
+  .dropdown-menu {
+    padding: 20px;
+    a {
+      display: block;
+      margin-bottom: 10px;
+      color: black;
+      margin-left: 0;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

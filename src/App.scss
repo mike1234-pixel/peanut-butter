@@ -1,0 +1,51 @@
+// fonts and typography
+
+@import url("https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap");
+
+// resets
+
+a {
+  text-decoration: none;
+}
+
+// standard
+
+img {
+  max-width: 100%;
+}
+
+// utilities
+
+.persian-text {
+  text-align: right;
+}
+
+// mixins
+
+@mixin backgroundGradient() {
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// buttons
+
+.button {
+  @include backgroundGradient();
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  color: white;
+  width: fit-content;
+  transition: color 0.5s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: black;
+  }
+}
