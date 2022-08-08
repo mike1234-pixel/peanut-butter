@@ -7,7 +7,7 @@ describe("e2e tests", () => {
 
     cy.contains("Learn everything"); // query element
 
-    cy.contains("Your specialist guide");
+    cy.contains("In the 19th century");
 
     cy.contains("Start Learning").click();
 
@@ -24,5 +24,3 @@ describe("e2e tests", () => {
     cy.contains("h1", "Grooming");
   });
 });
-
-// what else can i test so far?
