@@ -1,1 +1,4 @@
-export const isEnglish = (language) => (language === "en" ? true : false);
+const isEnglish = (language) =>
+  language.toLowerCase() === "en" ? true : false;
+
+export default isEnglish;

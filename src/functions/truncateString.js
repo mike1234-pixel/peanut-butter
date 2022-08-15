@@ -1,5 +1,8 @@
 const truncateString = (str, limit = 10) => {
-  return str.split(" ").slice(0, limit).join(" ") + "...";
+  const wordsArr = str.split(" ");
+  return limit > wordsArr.length
+    ? str
+    : wordsArr.slice(0, limit).join(" ") + "...";
 };
 
 export default truncateString;

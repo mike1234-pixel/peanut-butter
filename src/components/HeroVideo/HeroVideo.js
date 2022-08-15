@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../context/languageContext";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { isEnglish } from "../../functions/isEnglish";
+import isEnglish from "../../functions/isEnglish";
 import "./HeroVideo.scss";
 
 const HeroVideo = () => {

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import ImageSection from "./ImageSection";
 import retriever4 from "../../assets/image/retriever4.jpg";
 

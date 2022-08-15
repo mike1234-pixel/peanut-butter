@@ -39,8 +39,6 @@ test("it displays loading message before data is loaded", () => {
     wrapper: wrappers,
   });
 
-  //screen.debug();
-
   expect(getByText(cardTitle)).toBeTruthy();
 });
 
@@ -70,9 +68,5 @@ test("it displays the data once loaded", () => {
     wrapper: wrappers,
   });
 
-  //screen.debug();
-
   expect(getByText(cardTitle)).toBeTruthy();
 });
-
-// TEST CORRECT TEXT DISPLAYS IF PERSIAN
