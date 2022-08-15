@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 
 const history = createMemoryHistory();
 
-test("has the correct english language text", () => {
+test("Hero has the correct english language text", () => {
   const wrappers = ({ children }) => {
     return (
       <Router location={history.location} navigator={history}>
@@ -27,7 +27,7 @@ test("has the correct english language text", () => {
   expect(titleText).toBeTruthy();
 });
 
-test("has the correct persian language text", () => {
+test("Hero has the correct persian language text", () => {
   const wrappers = ({ children }) => {
     return (
       <Router location={history.location} navigator={history}>

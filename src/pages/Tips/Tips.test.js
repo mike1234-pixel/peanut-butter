@@ -1,11 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { DataContext } from "../../context/dataContext";
-import { LanguageContextProvider } from "../../context/languageContext";
+import { LanguageContext } from "../../context/languageContext";
 import mockDataContent from "../../../public/mockData/content.json";
 import mockDataTips from "../../../public/mockData/tips.json";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-
 import Tips from "./Tips";
 
 test("it displays loading message before data is loaded", () => {
@@ -24,11 +23,11 @@ test("it displays loading message before data is loaded", () => {
             saveContent: jest.fn(),
           }}
         >
-          <LanguageContextProvider
+          <LanguageContext.Provider
             value={{ language: "en", setLanguage: jest.fn() }}
           >
             {children}
-          </LanguageContextProvider>
+          </LanguageContext.Provider>
         </DataContext.Provider>
       </Router>
     );
@@ -58,7 +57,11 @@ test("it displays the data once loaded", () => {
             saveContent: jest.fn(),
           }}
         >
-          <LanguageContextProvider>{children}</LanguageContextProvider>
+          <LanguageContext.Provider
+            value={{ language: "en", setLanguage: jest.fn() }}
+          >
+            {children}
+          </LanguageContext.Provider>
         </DataContext.Provider>
       </Router>
     );
