@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Provider, DataContext } from "../../context/dataContext";
+import { DataContext } from "../../context/dataContext";
 import { LanguageContextProvider } from "../../context/languageContext";
 import mockDataContent from "../../../public/mockData/content.json";
 import mockDataTips from "../../../public/mockData/tips.json";
@@ -24,7 +24,11 @@ test("it displays loading message before data is loaded", () => {
             saveContent: jest.fn(),
           }}
         >
-          <LanguageContextProvider>{children}</LanguageContextProvider>
+          <LanguageContextProvider
+            value={{ language: "en", setLanguage: jest.fn() }}
+          >
+            {children}
+          </LanguageContextProvider>
         </DataContext.Provider>
       </Router>
     );
@@ -62,7 +66,6 @@ test("it displays the data once loaded", () => {
     );
   };
 
-  // getBy methods are synchronous, findBy are asynchronous
   const { getByText } = render(<Tips />, {
     wrapper: wrappers,
   });
@@ -71,3 +74,5 @@ test("it displays the data once loaded", () => {
 
   expect(getByText(cardTitle)).toBeTruthy();
 });
+
+// TEST CORRECT TEXT DISPLAYS IF PERSIAN

@@ -1,14 +1,16 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../context/dataContext";
+import { LanguageContext } from "../../context/languageContext";
 import toTitleCase from "../../functions/toTitleCase";
 import useFindPage from "../../hooks/useFindPage";
 import { Container } from "react-bootstrap";
+import { isEnglish } from "../../functions/isEnglish";
 import "./Tip.scss";
-import { LanguageContext } from "../../context/languageContext";
 
 const Tip = () => {
   const { tip } = useParams();
+
   const tipTitle = toTitleCase(tip);
 
   const { tips } = useContext(DataContext);
@@ -16,7 +18,7 @@ const Tip = () => {
 
   const selectedPage = useFindPage(tips, tipTitle);
 
-  const englishLanguage = language === "en";
+  const englishLanguage = isEnglish(language);
 
   return (
     <Container>

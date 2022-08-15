@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { LanguageContext } from "../../context/languageContext";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { isEnglish } from "../../functions/isEnglish";
 import "./HeroVideo.scss";
 
 const HeroVideo = () => {
   const { language } = useContext(LanguageContext);
 
-  const englishLanguage = language === "en";
+  const englishLanguage = isEnglish(language);
 
   return (
     <header className="hero-video__container">

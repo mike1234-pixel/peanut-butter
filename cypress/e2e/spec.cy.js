@@ -3,7 +3,7 @@
 
 describe("e2e tests", () => {
   it("visits and navigates through the site", () => {
-    cy.visit("http://localhost:3000");
+    cy.visit("");
 
     cy.contains("Learn everything"); // query element
 

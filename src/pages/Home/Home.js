@@ -4,6 +4,7 @@ import CarouselSection from "../../components/CarouselSection/CarouselSection";
 import ImageSection from "../../components/ImageSection/ImageSection";
 import { DataContext } from "../../context/dataContext";
 import { LanguageContext } from "../../context/languageContext";
+import { isEnglish } from "../../functions/isEnglish";
 import retriever4 from "../../assets/image/retriever4.jpg";
 import retriever5 from "../../assets/image/retriever5.jpg";
 
@@ -11,7 +12,7 @@ const Home = () => {
   const { content } = useContext(DataContext);
   const { language } = useContext(LanguageContext);
 
-  const englishLanguage = language === "en";
+  const englishLanguage = isEnglish(language);
 
   const homePageContent = content ? content[0].homepage : null;
 

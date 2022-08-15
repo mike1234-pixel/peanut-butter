@@ -6,13 +6,14 @@ import truncateString from "../../functions/truncateString";
 import toTitleCase from "../../functions/toTitleCase";
 import { DataContext } from "../../context/dataContext";
 import { LanguageContext } from "../../context/languageContext";
+import { isEnglish } from "../../functions/isEnglish";
 import "./Tips.scss";
 
 const Tips = () => {
   const { tips } = useContext(DataContext);
   const { language } = useContext(LanguageContext);
 
-  const englishLanguage = language === "en";
+  const englishLanguage = isEnglish(language);
 
   return (
     <Container>

@@ -16,8 +16,8 @@ const App = () => {
     const tipsRequest = "/mockData/tips.json";
     const contentRequest = "/mockData/content.json";
 
+    // required for fetching local json
     const fetchHeader = {
-      // required for fetching local json
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -25,15 +25,17 @@ const App = () => {
       },
     };
 
-    Promise.all([
-      fetch(tipsRequest, fetchHeader).then((response) => response.json()),
-      fetch(contentRequest, fetchHeader).then((response) => response.json()),
-    ])
-      .then((responses) => {
-        saveTips(responses[0]);
-        saveContent(responses[1]);
-      })
-      .catch((err) => console.error(err));
+    (async () => {
+      const tipsResponse = await fetch(tipsRequest, fetchHeader).then(
+        (response) => response.json()
+      );
+      const contentResponse = await fetch(contentRequest, fetchHeader).then(
+        (response) => response.json()
+      );
+
+      saveTips(tipsResponse);
+      saveContent(contentResponse);
+    })();
   }, [saveTips, saveContent]);
 
   return (
@@ -64,12 +66,31 @@ export default App;
 // react
 // typescript
 // cypress
+// jest
 // eslint
 // ci/cd workflow - github
 // istanbul (code coverage)
 // git - pushing, pull requests, merging etc - create another github account and try this yourself
 
-// cleanup in useEffect - add the lazy image loading to the app and use it there
+// Languages: JavaScript, HTML, CSS
 
-// functionality to build...
-// click on a dog, and it takes you to a dynamic page for that dog
+// Frameworks: React, Typescript, Sass, OpenAPI
+
+// Tools: Git, Bash, CI/CD (GitHub Actions, Gitlab CI, CircleCI, Travis, ...), A tool such as PhotoShop/GIMP, Illustrator/Inkscape for image treatment/manipulation
+
+// version: 1
+// frontend:
+//   phases:
+//     preBuild:
+//       commands:
+//         - npm ci
+//     build:
+//       commands:
+//         - npm run build
+//   artifacts:
+//     baseDirectory: build
+//     files:
+//       - '**/*'
+//   cache:
+//     paths:
+//       - node_modules/**/*
