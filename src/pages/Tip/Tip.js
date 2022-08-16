@@ -18,6 +18,8 @@ const Tip = () => {
 
   const selectedPage = useFindPage(tips, tipTitle);
 
+  console.log(tips, tipTitle, selectedPage);
+
   const englishLanguage = isEnglish(language);
 
   return (
