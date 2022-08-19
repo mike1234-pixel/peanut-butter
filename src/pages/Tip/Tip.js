@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { DataContext } from "../../context/dataContext";
-import { LanguageContext } from "../../context/languageContext";
+import { DataContext } from "../../context/DataContext.tsx";
+import { LanguageContext } from "../../context/LanguageContext.tsx";
 import toTitleCase from "../../functions/toTitleCase";
 import useFindPage from "../../hooks/useFindPage";
 import { Container } from "react-bootstrap";

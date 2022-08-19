@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import urlify from "../../functions/urlify";
 import truncateString from "../../functions/truncateString";
 import toTitleCase from "../../functions/toTitleCase";
-import { DataContext } from "../../context/dataContext";
-import { LanguageContext } from "../../context/languageContext";
+import { DataContext } from "../../context/DataContext";
+import { LanguageContext } from "../../context/LanguageContext.tsx";
 import isEnglish from "../../functions/isEnglish";
 import "./Tips.scss";
 

@@ -1,7 +1,7 @@
 import "./App.scss";
 import { useEffect, useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import { DataContext } from "./context/dataContext";
+import { DataContext } from "./context/DataContext.tsx";
 import Home from "./pages/Home/Home";
 import Page from "./pages/Tip/Tip";
 import Pages from "./pages/Tips/Tips";

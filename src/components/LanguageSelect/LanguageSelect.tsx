@@ -1,19 +1,21 @@
-import { useContext } from "react";
+import React, { FC, useContext } from "react";
 import { Form } from "react-bootstrap";
-import { LanguageContext } from "../../context/languageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import "./LanguageSelect.scss";
 
-const LanguageSelect = () => {
+const LanguageSelect: FC = () => {
   const { setLanguage } = useContext(LanguageContext);
 
-  const handleSelect = (lang) => {
+  const handleSelect: (lang: string) => void = (lang) => {
     setLanguage(lang);
   };
 
   return (
     <Form.Select
       aria-label="Select Language"
-      onChange={(e) => handleSelect(e.target.value)}
+      onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+        handleSelect(e.target.value)
+      }
       className="language-select"
     >
       <option>Select Language</option>

@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { DataContextProvider } from "./context/dataContext";
-import { LanguageContextProvider } from "./context/languageContext";
+import { DataContextProvider } from "./context/DataContext.tsx";
+import { LanguageContextProvider } from "./context/LanguageContext.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(

@@ -1,5 +1,5 @@
 import { FC, useContext } from "react";
-import { LanguageContext } from "../../context/languageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import isEnglish from "../../functions/isEnglish";

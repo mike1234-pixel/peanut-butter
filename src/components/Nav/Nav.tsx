@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,10 +7,10 @@ import LanguageSelect from "../LanguageSelect/LanguageSelect";
 import { FaPaw } from "react-icons/fa";
 import "./Nav.scss";
 
-const Navigation = () => {
-  const [activeClass, setActiveClass] = useState("");
+const Navigation: FC = () => {
+  const [activeClass, setActiveClass] = useState<string>("");
 
-  const handleClick = () => {
+  const handleClick: () => void = () => {
     activeClass === "" ? setActiveClass("is-active") : setActiveClass("");
   };
 
@@ -29,7 +29,7 @@ const Navigation = () => {
           <span
             onClick={handleClick}
             className={`hamburger hamburger--elastic  ${activeClass}`}
-            type="button"
+            role="button"
           >
             <span className="hamburger-box">
               <span className="hamburger-inner"></span>

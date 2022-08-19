@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { DataContext } from "../../context/dataContext";
-import { LanguageContext } from "../../context/languageContext";
+import { DataContext } from "../../context/DataContext.tsx";
+import { LanguageContext } from "../../context/LanguageContext.tsx";
 import mockDataContent from "../../../public/mockData/content.json";
 import mockDataTips from "../../../public/mockData/tips.json";
 import { createMemoryHistory } from "history";
