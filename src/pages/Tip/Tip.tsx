@@ -6,7 +6,7 @@ import toTitleCase from "../../functions/toTitleCase";
 import useFindPage from "../../hooks/useFindPage";
 import { Container } from "react-bootstrap";
 import isEnglish from "../../functions/isEnglish";
-import TipI from "../../types/data/TipI";
+import { TipI } from "../../types/data/TipI";
 import "./Tip.scss";
 
 const Tip: FC = () => {

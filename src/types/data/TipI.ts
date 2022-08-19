@@ -1,4 +1,4 @@
-interface TipI {
+export interface TipI {
   id: string;
   title: string;
   titlefa: string;
@@ -7,5 +7,3 @@ interface TipI {
   banner: string;
   img: string;
 }
-
-export default TipI;

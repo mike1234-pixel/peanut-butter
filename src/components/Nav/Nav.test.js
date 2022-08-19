@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-import { LanguageContext } from "../../context/LanguageContext.tsx";
+import { LanguageContext } from "../../context/LanguageContext";
 import Nav from "./Nav";
 
 const history = createMemoryHistory();

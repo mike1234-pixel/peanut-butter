@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { LanguageContext } from "../../context/LanguageContext.tsx";
+import { LanguageContext } from "../../context/LanguageContext";
 import HeroVideo from "./HeroVideo";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";

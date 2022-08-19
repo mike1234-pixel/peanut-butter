@@ -5,8 +5,8 @@ import "./ImageSection.scss";
 interface ImageSectionProps {
   imgPosition: string;
   image: string;
-  title: string;
-  text: string;
+  title: string | null;
+  text: string | null;
 }
 
 const ImageSection: FC<ImageSectionProps> = (props: ImageSectionProps) => {

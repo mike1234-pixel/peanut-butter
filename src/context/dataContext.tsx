@@ -1,8 +1,9 @@
 import { FC, createContext, PropsWithChildren, useState } from "react";
 import mockDataTips from "../mockData/tips.json";
 import mockDataContent from "../mockData/content.json";
-import TipI from "../types/data/TipI";
-import ContentI from "../types/data/ContentI";
+import { TipI } from "../types/data/TipI";
+import { ContentI } from "../types/data/ContentI";
+import { SaveContent, SaveTips } from "../types/state/setters";
 
 // createContext creates a context object
 // When React renders a component that subscribes to this Context object it will read the current context value from the closest matching Provider above it in the tree.
@@ -10,9 +11,9 @@ import ContentI from "../types/data/ContentI";
 // define types for tips and content
 interface DataContextProps {
   tips: Array<TipI>;
-  saveTips: (tips: Array<TipI>) => void;
+  saveTips: SaveTips;
   content: Array<ContentI>;
-  saveContent: (content: Array<ContentI>) => void;
+  saveContent: SaveContent;
 }
 
 export const DataContext = createContext<DataContextProps>({

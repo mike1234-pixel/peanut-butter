@@ -6,8 +6,8 @@ import retriever3 from "../../assets/image/retriever3.jpg";
 import "./CarouselSection.scss";
 
 interface CarouselSectionProps {
-  title: string;
-  text: string;
+  title: string | null;
+  text: string | null;
 }
 
 const CarouselSection: FC<CarouselSectionProps> = (props) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import LanguageSelect from "./LanguageSelect";
-import { LanguageContext } from "../../context/LanguageContext.tsx";
+import { LanguageContext } from "../../context/LanguageContext";
 
 test("Language selection works", () => {
   const wrappers = ({ children }) => {
