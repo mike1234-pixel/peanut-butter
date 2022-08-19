@@ -10,6 +10,11 @@ a {
 
 // standard
 
+a,
+select {
+  cursor: url("./assets/image/paw.png"), auto;
+}
+
 img {
   max-width: 100%;
 }
