@@ -18,7 +18,9 @@ const LanguageSelect: FC = () => {
       }
       className="language-select"
     >
-      <option>Select Language</option>
+      <option value="select-language" disabled defaultValue="selected">
+        Select Language
+      </option>
       <option value="en">English</option>
       <option value="fa">Persian</option>
     </Form.Select>
