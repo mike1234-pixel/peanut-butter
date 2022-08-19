@@ -4,11 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { DataContextProvider } from "./context/dataContext";
-import { LanguageContextProvider } from "./context/languageContext";
+import { DataContextProvider } from "./context/DataContext";
+import { LanguageContextProvider } from "./context/LanguageContext";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const root = ReactDOM.createRoot(
+const root: ReactDOM.Root = ReactDOM.createRoot(
   document.getElementById("root") || document.createElement("div")
 );
 root.render(

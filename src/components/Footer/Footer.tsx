@@ -1,7 +1,8 @@
-import "./Footer.scss";
+import { FC } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import "./Footer.scss";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className="footer">
       <Container>

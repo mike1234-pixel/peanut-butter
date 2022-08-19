@@ -1,31 +1,32 @@
-import { useContext } from "react";
+import { FC, useContext } from "react";
 import { Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import urlify from "../../functions/urlify";
 import truncateString from "../../functions/truncateString";
 import toTitleCase from "../../functions/toTitleCase";
-import { DataContext } from "../../context/dataContext";
-import { LanguageContext } from "../../context/languageContext";
+import { DataContext } from "../../context/DataContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import isEnglish from "../../functions/isEnglish";
+import { TipI } from "../../types/data/TipI";
 import "./Tips.scss";
 
-const Tips = () => {
-  const { tips } = useContext(DataContext);
-  const { language } = useContext(LanguageContext);
+const Tips: FC = () => {
+  const { tips }: { tips: Array<TipI> } = useContext(DataContext);
+  const { language }: { language: string } = useContext(LanguageContext);
 
-  const englishLanguage = isEnglish(language);
+  const englishLanguage: boolean = isEnglish(language);
 
   return (
     <Container>
       <div className="tips">
         {tips ? (
           tips.map((tip) => {
-            const title = englishLanguage ? tip.title : tip.titlefa;
-            const description = englishLanguage
+            const title: string = englishLanguage ? tip.title : tip.titlefa;
+            const description: string = englishLanguage
               ? tip.description
               : tip.descriptionfa;
 
-            const banner = JSON.parse(tip.banner.toLowerCase());
+            const banner: string = JSON.parse(tip.banner.toLowerCase());
 
             return !banner ? (
               <Link

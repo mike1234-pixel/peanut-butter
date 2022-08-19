@@ -1,4 +1,4 @@
-import Index from "./index.js";
+import Index from "./index.tsx";
 
 it("renders without crashing", () => {
   expect(

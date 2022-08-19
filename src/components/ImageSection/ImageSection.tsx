@@ -1,7 +1,17 @@
+import { FC } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./ImageSection.scss";
 
-const ImageSection = ({ imgPosition, image, title, text }) => {
+interface ImageSectionProps {
+  imgPosition: string;
+  image: string;
+  title: string | null;
+  text: string | null;
+}
+
+const ImageSection: FC<ImageSectionProps> = (props: ImageSectionProps) => {
+  const { imgPosition, image, title, text } = props;
+
   const imgOrder = imgPosition === "left" ? 0 : 1;
   const textOrder = imgPosition === "left" ? 1 : 0;
   const offsetLeft = imgPosition === "left" ? 1 : 0;
