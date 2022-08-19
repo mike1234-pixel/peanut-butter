@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
-import { DataContext } from "../../context/dataContext";
-import { LanguageContext } from "../../context/languageContext";
-import mockDataContent from "../../../public/mockData/content.json";
-import mockDataTips from "../../../public/mockData/tips.json";
-import { createMemoryHistory } from "history";
+import { DataContext } from "./context/dataContext";
+import { LanguageContext } from "./context/languageContext";
+import mockDataContent from "../public/mockData/content.json";
+import mockDataTips from "../public/mockData/tips.json";
 import { Router } from "react-router-dom";
-import Home from "./Home";
+import { createMemoryHistory } from "history";
+import App from "./App";
 
-test("Home displays correctly", () => {
-  const history = createMemoryHistory();
+const history = createMemoryHistory();
 
+test("renders correctly", () => {
   const wrappers = ({ children }) => {
     return (
       <Router location={history.location} navigator={history}>
@@ -31,8 +31,7 @@ test("Home displays correctly", () => {
     );
   };
 
-  // getBy methods are synchronous, findBy are asynchronous
-  const { container } = render(<Home />, {
+  const { container } = render(<App />, {
     wrapper: wrappers,
   });
 

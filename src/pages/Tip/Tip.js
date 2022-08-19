@@ -18,8 +18,6 @@ const Tip = () => {
 
   const selectedPage = useFindPage(tips, tipTitle);
 
-  console.log(tips, tipTitle, selectedPage);
-
   const englishLanguage = isEnglish(language);
 
   return (
@@ -40,7 +38,7 @@ const Tip = () => {
             <img src={selectedPage.img} alt={selectedPage.title} />
           </div>
         ) : (
-          <p>loading...</p>
+          <p>not found...</p>
         )}
       </div>
     </Container>

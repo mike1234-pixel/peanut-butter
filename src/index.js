@@ -8,7 +8,9 @@ import { DataContextProvider } from "./context/dataContext";
 import { LanguageContextProvider } from "./context/languageContext";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(
+  document.getElementById("root") || document.createElement("div")
+);
 root.render(
   <React.StrictMode>
     <Router>
