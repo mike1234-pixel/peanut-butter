@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
-import CarouselSection from "../../components/CarouselSection/CarouselSection";
+import CarouselSection from "../../components/CarouselSection/CarouselSection.tsx";
 import ImageSection from "../../components/ImageSection/ImageSection";
 import { DataContext } from "../../context/dataContext";
 import { LanguageContext } from "../../context/languageContext";
