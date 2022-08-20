@@ -1,29 +1,64 @@
-import React, { FC, useContext } from "react";
-import { Form } from "react-bootstrap";
+import { FC, useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
+import Select, {
+  CSSObjectWithLabel,
+  GroupBase,
+  OptionProps,
+  Options,
+  StylesConfig,
+} from "react-select";
 import "./LanguageSelect.scss";
 
 const LanguageSelect: FC = () => {
   const { setLanguage } = useContext(LanguageContext);
 
-  const handleSelect: (lang: string) => void = (lang) => {
-    setLanguage(lang);
+  type OptionType = { label: string; value: string };
+
+  const handleChange: (option: OptionType | null) => void = (option) => {
+    if (option) {
+      const language: string = option.value;
+      setLanguage(language);
+    }
   };
 
+  // extend/customise the existing styles
+  const customStyles: StylesConfig<any> = {
+    option: (
+      provided: CSSObjectWithLabel,
+      state: OptionProps<any, boolean, GroupBase<any>>
+    ) => ({
+      ...provided,
+      color: state.isSelected ? "white" : "black",
+      background: state.isSelected ? "rgb(207, 168, 116)" : "white",
+    }),
+    menuList: (provided: CSSObjectWithLabel) => ({
+      ...provided,
+      padding: "0",
+    }),
+    placeholder: (provided: CSSObjectWithLabel) => ({
+      ...provided,
+      color: "black",
+    }),
+    control: () => ({
+      width: 250,
+      background: "white",
+      display: "flex",
+      padding: "0",
+    }),
+  };
+
+  const options: Options<any> = [
+    { value: "en", label: "English" },
+    { value: "fa", label: "Persian" },
+  ];
+
   return (
-    <Form.Select
-      aria-label="Select Language"
-      onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-        handleSelect(e.target.value)
-      }
-      className="language-select"
-    >
-      <option value="select-language" disabled defaultValue="selected">
-        Select Language
-      </option>
-      <option value="en">English</option>
-      <option value="fa">Persian</option>
-    </Form.Select>
+    <Select
+      options={options}
+      onChange={(option) => handleChange(option)}
+      styles={customStyles}
+      placeholder={"Select Language"}
+    />
   );
 };
 

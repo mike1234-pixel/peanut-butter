@@ -5,3 +5,10 @@
     margin: 35px 0 30px;
   }
 }
+
+.option {
+  color: black;
+  &--disabled {
+    color: grey;
+  }
+}

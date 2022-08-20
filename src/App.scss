@@ -11,8 +11,10 @@ a {
 // standard
 
 a,
-select {
-  cursor: url("./assets/image/paw.png"), auto;
+select,
+button,
+*[role="button"] {
+  cursor: url("./assets/image/paw.svg") 30 30, auto;
 }
 
 img {
