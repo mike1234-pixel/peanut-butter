@@ -40,7 +40,7 @@ Runs the unit tests mentioned above as well as generating a test coverage report
 
 ## E2E Tests
 
-## `npm run cypress:open`
+### `npm run cypress:open`
 
 Runs the end-to-end tests written with `cypress`.
 
