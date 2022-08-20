@@ -13,11 +13,23 @@ describe("e2e tests", () => {
 
     cy.url().should("include", "/tips");
 
-    cy.get(".language-select").select("Persian");
+    // solution for custom select elements
+    cy.get(".language-select").click();
+    cy.get("div").each(($ele) => {
+      if ($ele.text() == "Persian") {
+        cy.wrap($ele).click();
+      }
+    });
+    // cy.get(".language-select").select("Persian");
 
     cy.contains("اطلاعات کلی");
 
-    cy.get(".language-select").select("English");
+    cy.get(".language-select").click();
+    cy.get("div").each(($ele) => {
+      if ($ele.text() == "English") {
+        cy.wrap($ele).click();
+      }
+    });
 
     cy.contains("h5", "Grooming").click();
 

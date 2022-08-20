@@ -58,6 +58,7 @@ const LanguageSelect: FC = () => {
       onChange={(option) => handleChange(option)}
       styles={customStyles}
       placeholder={"Select Language"}
+      className="language-select"
     />
   );
 };
