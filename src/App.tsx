@@ -1,5 +1,5 @@
 import { FC, useEffect, useContext } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Location, Route, Routes, useLocation } from "react-router-dom";
 import { DataContext } from "./context/DataContext";
 import Home from "./pages/Home/Home";
 import Page from "./pages/Tip/Tip";
@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import { TipI } from "./types/data/TipI";
 import { ContentI } from "./types/data/ContentI";
 import { SaveTips, SaveContent } from "./types/state/setters";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./App.scss";
 
 const App: FC = () => {
@@ -17,6 +18,8 @@ const App: FC = () => {
     saveTips,
     saveContent,
   }: { saveTips: SaveTips; saveContent: SaveContent } = useContext(DataContext);
+
+  const location: Location = useLocation();
 
   useEffect(() => {
     const tipsRequest: string = "/mockData/tips.json";
@@ -57,12 +60,16 @@ const App: FC = () => {
   return (
     <>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tips" element={<Pages />} />
-        <Route path="/tips/:tip" element={<Page />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
+      <TransitionGroup>
+        <CSSTransition key={location.key} timeout={900} classNames="fade">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tips" element={<Pages />} />
+            <Route path="/tips/:tip" element={<Page />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
       <Footer />
     </>
   );

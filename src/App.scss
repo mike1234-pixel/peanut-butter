@@ -13,8 +13,12 @@ a {
 a,
 select,
 button,
+.language-select,
 *[role="button"] {
-  cursor: url("./assets/image/paw.svg") 30 30, auto;
+  cursor: url("./assets/image/paw.svg") 15 15, auto;
+  &:active {
+    cursor: url("./assets/image/pawFocus.svg") 15 15, auto;
+  }
 }
 
 img {
@@ -50,4 +54,24 @@ img {
   &:focus {
     color: black;
   }
+}
+
+// page fade
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 450ms linear 250ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 450ms linear;
 }
