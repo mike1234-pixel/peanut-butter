@@ -14,6 +14,7 @@ a,
 select,
 button,
 .language-select,
+.carousel-indicators [data-bs-target],
 *[role="button"] {
   cursor: url("./assets/image/paw.svg") 15 15, auto;
   &:active {

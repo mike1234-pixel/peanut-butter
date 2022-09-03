@@ -40,7 +40,6 @@ const LanguageSelect: FC = () => {
       color: "black",
     }),
     control: () => ({
-      width: 250,
       background: "white",
       display: "flex",
       padding: "0",

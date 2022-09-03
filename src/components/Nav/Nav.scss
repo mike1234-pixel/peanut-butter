@@ -3,13 +3,14 @@
 $hamburger-padding-x: 10px;
 $hamburger-padding-y: 10px;
 $hamburger-types: (elastic) !default;
+
 @import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 .nav {
   @include backgroundGradient();
   color: white;
   .navbar-brand {
-    margin-right: 100px;
+    margin-right: auto;
     a {
       margin-left: 0;
       font-family: "Permanent Marker", cursive;
@@ -28,6 +29,13 @@ $hamburger-types: (elastic) !default;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
+  }
+  .navbar-toggler {
+    padding: 0;
+    border: 0;
+    &:focus {
+      box-shadow: none;
+    }
   }
   .navbar-toggle {
     padding: 0;
