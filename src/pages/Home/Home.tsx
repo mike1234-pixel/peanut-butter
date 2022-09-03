@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect } from "react";
+import { FC, useContext } from "react";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import CarouselSection from "../../components/CarouselSection/CarouselSection";
 import ImageSection from "../../components/ImageSection/ImageSection";
